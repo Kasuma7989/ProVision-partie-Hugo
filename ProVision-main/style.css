@@ -1,0 +1,565 @@
+/* *********************
+ * Variables & Reset
+ *********************** */
+:root{
+    --text: #FFF;
+    --background: #1C112C;
+    --primary: #e2d703;
+    --secondary: #d35d09;
+    --accent: #000;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.fade_rule {
+    height: 3px;
+    border-radius : 50%;
+    border-top: 4px solid #ccc;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* *********************
+ * Section : Header
+ *********************** */
+header {
+    background: rgba(0,0,0,0.2);
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-logo {
+    width: auto;
+    height: 40px;
+}
+
+.header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.header-list {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header-list a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+}
+
+.header-list a:hover {
+    color: var(--primary);
+}
+
+/* *********************
+ * Section : Search
+ *********************** */
+.header-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-search #searchBar {
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+    color: var(--text);
+}
+
+.header-search .btn-search {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+.header-search .btn-search:hover {
+    color: var(--secondary);
+}
+/* *********************
+ * Section : Auth
+ *********************** */
+.header-auth {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-login, .btn-signup {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+.btn-login a:hover, .btn-signup a:hover {
+    color: var(--primary);
+}
+
+.btn-login i, .btn-signup i {
+    font-size: 24px;
+}
+.header-auth a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+    /* *********************
+     * Section : Banner
+     *********************** */
+.header-banner {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+}
+
+.banner-txt {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.banner-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.banner-paragraph {
+    font-size: clamp(1rem, 3vw, 1.8rem);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* *********************
+ * Section : Slider
+ *********************** */
+.slider {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1000;
+    opacity: 0.3;
+    filter: blur(4px) brightness(0.6);
+}
+
+.slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slider 15.2s infinite;
+    padding: 0;
+    margin: 0;
+}
+
+.slider .slide:nth-child(1) {
+    background-image: url('assets/img/Slider/Top Gun Collection  - Backdrop.webp');
+    animation-delay: 0s;
+}
+
+.slider .slide:nth-child(2) {
+    background-image: url('assets/img/Slider/Top Gun Collection  - Backdrop.webp');
+    animation-delay: -3.8s;
+}
+
+.slider .slide:nth-child(3) {
+    background-image: url('assets/img/Slider/Ted Lasso (2020) - Backdrop.webp');
+    animation-delay: -7.6s;
+}
+
+.slider .slide:nth-child(4) {
+    background-image: url('assets/img/Slider/Cross (2024) - Backdrop.webp');
+    animation-delay: -11.399999999999999s;
+}
+
+
+@keyframes slider {
+    0%, 20%, 100% {
+        opacity: 1;
+        animation-timing-function: ease;
+        z-index: 0;
+    }
+    25% {
+        opacity: 0;
+        animation-timing-function: step-end;
+        z-index: 0;
+    }
+    95% {
+        opacity: 1;
+        animation-timing-function: step-end;
+        z-index: -1;
+    }
+}
+/* *********************
+ * Section : Buttons
+ *********************** */
+.btn-subscribe {
+    padding: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 700;
+    border: 3px solid var(--primary);
+    border-radius: 20px;
+    color: var(--text);
+    background: var(--background);
+    background-image: linear-gradient(75deg, var(--primary) 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 600%;
+    transition: background 430ms ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* ***************************
+ * Section : Règles Générales
+ ***************************** */
+.btn-subscribe:hover {
+    background-position: 0;
+}
+
+.sectionsMain {
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.sectionsMain_txt {
+    margin: 1rem;
+    padding: 1rem;
+}
+.sectionsMain_txt h3  {
+    padding: 0;
+    font-size: 1.5rem;
+}
+/* *********************
+ * Section : Categories
+ *********************** */
+.cards-categories-txt span,  .subscribeHome-text span {
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.home-cards_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: 1rem;
+}
+
+.card {
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(226, 215, 3, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(0,0,0,0.3);
+}
+
+.card-img_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-img_row img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-explore {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-explore h6 {
+    margin: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.card-explore button {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-explore button:hover {
+    transform: scale(1.2);
+    color: var(--secondary);
+}
+
+/* *********************
+ * Section : Subscribe Home
+ *********************** */
+
+
+.subscribeHome-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 2rem;
+    justify-content: center;
+}
+.subscribeHome-card {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(211, 93, 9, 0.3);
+    box-shadow: 3px 0 6px rgba(255,255,255,0.1);
+    padding: 0.8rem;
+    background: rgba(0,0,0, 0.06);
+}
+.subscribeHome-txt{
+    display: flex;
+    flex-direction: column;
+
+}
+.subscribeHome-title,
+.subscribeHome-description,
+.subscribeHome-price {
+    margin: 1rem;
+}
+
+.subscribeHome-title {
+    font-size: 1.2rem!important;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.subscribeHome-description {
+    color: var(--secondary);
+}
+.subscribeHome-btn {
+    display: flex;
+    justify-content: center;
+}
+.subscribeHome-btn button {
+    color: var(--text);
+    margin: 1rem 0 0 0;
+    padding: 7px;
+    border: 2px solid var(--secondary);
+    border-radius: 5px;
+    font-weight: 800;
+    background: var(--background);
+    background-color: var(--background);
+    background-image: linear-gradient(75deg, var(--secondary) 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 600%;
+    transition: background 430ms ease-in-out;
+}
+.subscribeHome-btn button:hover {
+    cursor: pointer;
+    background-position: 0;
+}
+.subscribeHome-btn button a {
+    text-decoration: none;
+    color: var(--text);
+
+}
+/* *********************
+ * Section : Footer
+ *********************** */
+.footer {
+    background: rgba(0,0,0,0.2);
+    padding: clamp(2rem, 5vw, 4rem);
+    border-top: 1px solid rgba(226, 215, 3, 0.3);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-col h4 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--text);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: var(--primary);
+    transform: scale(1.19);
+}
+
+.footer-legal {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(226, 215, 3, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-legalinfos {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-legal a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+    color: var(--primary);
+}
+
+/* *********************
+ * Section : Responsive Navigation
+ *********************** */
+.nav-toggle {
+    display: none;
+    color: var(--text);
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        z-index: 10;
+    }
+
+    .slider {
+        z-index: 1;
+    }
+
+    .header-navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        background: var(--background);
+    }
+
+    .header-logo {
+        align-self: flex-start;
+    }
+
+    .nav-toggle {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+    }
+
+    .header-search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-auth {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .header-list {
+        display: none;
+        position: relative;
+        width: 100%;
+        background: var(--background);
+        z-index: 99;
+    }
+
+    .header-list.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-txt {
+        z-index: -1;
+    }
+}
+
